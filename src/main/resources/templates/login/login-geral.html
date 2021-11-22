@@ -23,14 +23,61 @@
 	</header>
 
 	<div class="login-main">
-	
-		<div class="card" style="width: 18rem;">
-			<div class="card-body">
-				<span>Escolha como deseja iniciar:</span>
-				<button type="button" class="btn btn-primary">CPF + Data de
-					Nascimento</button>
-				<button type="button" class="btn btn-success">Nº SUS + Data
-					de Nascimento</button>
+
+		<div class="accordion" id="accordionExample">
+			<strong>Escolha como deseja iniciar:</strong>
+			<p></p>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button"
+						data-bs-toggle="collapse" data-bs-target="#collapseOne"
+						aria-expanded="true" aria-controls="collapseOne">CPF +
+						Data de Nascimento</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show"
+					aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<form>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">CPF </label>
+								<input type="email" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" data-mask="000.000.000-00">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Data
+									de Nascimento</label> <input type="date" class="form-control"
+									id="dataEntrada" />
+							</div>
+							<button type="submit" class="btn btn-primary btn-success">Entrar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingTwo">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+						aria-expanded="false" aria-controls="collapseTwo">Nº SUS
+						+ Data de Nascimento</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse"
+					aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<form>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Nº SUS </label>
+								<input type="email" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" data-mask="000000000000000">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Data
+									de Nascimento</label> <input type="date" class="form-control"
+									id="dataEntrada" />
+							</div>
+							<button type="submit" class="btn btn-primary btn-success">Entrar</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

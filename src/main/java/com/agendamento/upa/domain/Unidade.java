@@ -4,9 +4,10 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "UNIDADES")
-public class Unidade {
+public class Unidade extends AbstractEntity<Long>{
 
 	@NotBlank(message = "Informe um nome para a unidade.")
 	@Size(max = 60, message = "O nome da unidade deve ter no máximo {max} caracteres.")
