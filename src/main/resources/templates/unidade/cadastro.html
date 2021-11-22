@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/layout-adm}">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand " href="#">Cadastrar Unidades</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="main-content">
+			<form action="">
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">Nome da
+						unidade</span> <input type="text" class="form-control"
+						aria-label="Nome da unidade" aria-describedby="basic-addon1">
+				</div>
+
+				<h3>Endereço</h3>
+				<br />
+
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">Logradouro</span>
+					<input type="text" class="form-control" aria-label="Logradouro"
+						aria-describedby="basic-addon1"> <span
+						class="input-group-text" id="basic-addon1">Bairro</span> <input
+						type="text" class="form-control" aria-label="Bairro"
+						aria-describedby="basic-addon1"> <span
+						class="input-group-text" id="basic-addon1">Cidade</span> <input
+						type="text" class="form-control" aria-label="Cidade"
+						aria-describedby="basic-addon1">
+				</div>
+
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="basic-addon1">CEP</span> <input
+						type="text" class="form-control" aria-label="CEP"
+						aria-describedby="basic-addon1" data-mask="00000-000"> <span
+						class="input-group-text" id="basic-addon1">UF</span> <select
+						id="inputState" class="form-select">
+						<option selected>Selecione...</option>
+						<option th:each="uf : ${ufs}" th:value="${uf}"
+							th:text="${uf.sigla}"></option>
+					</select> <span class="input-group-text" id="basic-addon1">Número</span> <input
+						type="text" class="form-control" aria-label="Número"
+						aria-describedby="basic-addon1">
+				</div>
+
+				<div class="input-group">
+					<span class="input-group-text">Complemento</span>
+					<textarea class="form-control" aria-label="With textarea"></textarea>
+				</div>
+				<br /> <input type="hidden" />
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</form>
+
+		</div>
+
+
+	</section>
+
+
+</body>
+</html>

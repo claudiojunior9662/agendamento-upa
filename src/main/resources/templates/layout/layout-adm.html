@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title>Agendamento</title>
 <meta charset="UTF-8" />
@@ -23,9 +25,15 @@
 	</header>
 
 	<div class="layout-main">
-		<nav th:replace="fragments/navbar :: navbar">
-			<span>menu</span>
-		</nav>
+		<aside>
+			<nav th:replace="fragments/navbar/navbar-adm :: navbar-adm">
+				<span>menu</span>
+			</nav>
+		</aside>
+		<section layout:fragment="corpo">
+			<div>conteúdo das páginas</div>
+		</section>
+
 	</div>
 
 	<!-- Bootstrap core JavaScript
