@@ -5,19 +5,23 @@ body {
 }
 
 .fundo-padrao {
-	background-image: linear-gradient(to bottom, #7453E0, #180066);
+	background-image: linear-gradient(to bottom, #FAEC86, #A7950B);
 	background-attachment: fixed;
 }
 
-.login-main .accordion {
+.login-main .collapse-menu {
 	padding: 20px 20px 20px 20px;
-	width: 350px;
+	width: 80%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	box-shadow: 1px 5px 30px black;
 	background-color: white;
+}
+
+.login-main .collapse-menu .collapse-div{
+	text-align: center;
 }
 
 .login-main .btn {

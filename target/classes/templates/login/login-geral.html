@@ -23,18 +23,23 @@
 	</header>
 
 	<div class="login-main">
-
-		<div class="accordion" id="accordionExample">
-			<strong>Escolha como deseja iniciar:</strong>
-			<p></p>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button" type="button"
-						data-bs-toggle="collapse" data-bs-target="#collapseOne"
-						aria-expanded="true" aria-controls="collapseOne">CPF +
+		<div class="collapse-menu">
+			<div class="collapse-div">
+				<h3>Escolha como deseja iniciar:</h3>
+				<p>
+					<button class="btn btn-dark" type="button"
+						data-bs-toggle="collapse" data-bs-target="#collapseCpf"
+						aria-expanded="false" aria-controls="collapseCpf">CPF +
 						Data de Nascimento</button>
-				</h2>
-				<div id="collapseOne" class="accordion-collapse collapse show"
+					<button class="btn btn-dark" type="button"
+						data-bs-toggle="collapse" data-bs-target="#collapseSus"
+						aria-expanded="false" aria-controls="collapseSus">Nº SUS
+						+ Data de Nascimento</button>
+				</p>
+			</div>
+
+			<div class="collapse" id="collapseCpf">
+				<div id="collapseOne" class="card card-body"
 					aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
 						<form>
@@ -53,21 +58,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingTwo">
-					<button class="accordion-button collapsed" type="button"
-						data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-						aria-expanded="false" aria-controls="collapseTwo">Nº SUS
-						+ Data de Nascimento</button>
-				</h2>
-				<div id="collapseTwo" class="accordion-collapse collapse"
+			<div class="collapse" id="collapseSus">
+				<div id="collapseTwo" class="card card-body"
 					aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
 						<form>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">Nº SUS </label>
-								<input type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" data-mask="000000000000000">
+								<label for="exampleInputEmail1" class="form-label">Nº
+									SUS </label> <input type="email" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp"
+									data-mask="000000000000000">
 							</div>
 							<div class="mb-3">
 								<label for="exampleInputPassword1" class="form-label">Data
@@ -90,5 +90,13 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var popover = new bootstrap.Popover(element, {
+			popperConfig : function(defaultBsPopperConfig) {
+				popover.show()
+
+			}
+		})
+	</script>
 </body>
 </html>
