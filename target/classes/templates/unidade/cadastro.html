@@ -9,12 +9,14 @@
 		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand " href="#">Cadastrar Unidades</a>
+					<a class="navbar-brand ">Cadastrar Unidades</a>
 				</div>
 			</div>
 		</nav>
 
 		<div class="main-content" id="cadastro">
+
+			<div th:replace="fragments/alert"></div>
 
 			<form th:action="@{/unidades/salvar}" th:object="${unidade}"
 				method="POST">

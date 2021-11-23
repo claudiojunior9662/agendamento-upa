@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +28,12 @@ public class UnidadeController {
 		return "/unidade/cadastro";
 	}
 	
+	@GetMapping("/listar")
+	public String listar(ModelMap model) {
+		model.addAttribute("unidades", unidadeService.buscarTodos());
+		return "/unidade/lista";
+	}
+	
 	@ModelAttribute("ufs")
 	public UF[] listaUfs() {
 		return UF.values();
@@ -43,4 +50,6 @@ public class UnidadeController {
 		attr.addFlashAttribute("success", "Unidade cadastrada com sucessso.");
 		return "redirect:/unidades/cadastrar";
 	}
+	
+	
 }

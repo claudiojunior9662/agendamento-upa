@@ -15,7 +15,7 @@ public class Unidade extends AbstractEntity<Long>{
 	private String nome;
 	
 	@Valid
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id_fk")
 	private Endereco endereco;
 
