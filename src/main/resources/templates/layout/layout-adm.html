@@ -20,8 +20,19 @@
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body class="fundo-padrao">
-	<header th:replace="fragments/header :: cabecalho">
-		<div>header</div>
+	<header>
+		<nav class="navbar navbar-inverse bg-white">
+			<div class="container-fluid">
+				<div class="navbar-header"></div>
+			</div>
+		</nav>
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<i class="bi bi-calendar-check"></i> <a class="navbar-brand ">Administração</a>
+				</div>
+			</div>
+		</nav>
 	</header>
 
 	<div class="layout-main">
@@ -32,8 +43,7 @@
 		</aside>
 
 		<div class="div-corpo">
-			<section layout:fragment="corpo">
-			</section>
+			<section layout:fragment="corpo"></section>
 		</div>
 
 
