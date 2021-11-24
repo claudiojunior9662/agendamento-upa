@@ -17,5 +17,9 @@ public interface UnidadeService {
 	List<Unidade> buscarTodos();
 
 	List<Unidade> buscarPorNome(String nome);
+
+	List<Unidade> buscarPorCep(String cep);
+
+	List<Unidade> buscarPorUf(String uf);
 	
 }

@@ -12,7 +12,7 @@ public class MedicoDaoImpl extends AbstractDao<Medico, Long> implements MedicoDa
 
 	@Override
 	public List<Medico> findByNome(String nome) {
-		return createQuery("select m from Medico m where m.nome like concat ('%', ?1, '%') ", nome);
+		return createQueryList("select m from Medico m where m.nome like concat ('%', ?1, '%') ", nome);
 	}
 
 	

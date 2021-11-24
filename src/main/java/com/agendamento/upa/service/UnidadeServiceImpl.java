@@ -49,4 +49,14 @@ public class UnidadeServiceImpl implements UnidadeService{
 		return dao.findByNome(nome);
 	}
 
+	@Override
+	public List<Unidade> buscarPorCep(String cep) {
+		return dao.findByCep(cep);
+	}
+
+	@Override
+	public List<Unidade> buscarPorUf(String uf) {
+		return dao.findByUf(uf);
+	}
+
 }

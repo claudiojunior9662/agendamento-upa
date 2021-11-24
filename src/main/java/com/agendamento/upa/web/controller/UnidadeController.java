@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.agendamento.upa.domain.UF;
@@ -49,6 +51,24 @@ public class UnidadeController {
 		unidadeService.salvar(unidade);
 		attr.addFlashAttribute("success", "Unidade cadastrada com sucessso.");
 		return "redirect:/unidades/cadastrar";
+	}
+	
+	@GetMapping("/buscar/nome")
+	public String getPorNome(@RequestParam("nome") String nome, ModelMap model) {
+		model.addAttribute("unidades", unidadeService.buscarPorNome(nome));
+		return "unidade/lista";
+	}
+	
+	@GetMapping("/buscar/cep")
+	public String getPorCep(@RequestParam("cep") String cep, ModelMap model) {
+		model.addAttribute("unidades", unidadeService.buscarPorCep(cep));
+		return "unidade/lista";
+	}
+	
+	@GetMapping("/buscar/uf")
+	public String getPorUf(@RequestParam("uf") UF uf, ModelMap model) {
+		model.addAttribute("unidades", unidadeService.buscarPorUf(uf.getSigla()));
+		return "unidade/lista";
 	}
 	
 	

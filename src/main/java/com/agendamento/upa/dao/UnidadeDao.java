@@ -17,5 +17,9 @@ public interface UnidadeDao {
 	List<Unidade> findAll();
 
 	List<Unidade> findByNome(String nome);
+
+	List<Unidade> findByCep(String cep);
+
+	List<Unidade> findByUf(String uf);
 	
 }

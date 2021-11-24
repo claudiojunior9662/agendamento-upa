@@ -18,14 +18,15 @@
 
 			<p>
 				<i class="oi oi-magnifying-glass"></i><span></span>
-				<button class="btn btn-primary" type="button" data-toggle="collapse"
-					data-target="#collapseNome" aria-controls="collapseNome">Nome
-				</button>
-				<button class="btn btn-primary" type="button" data-toggle="collapse"
-					data-target="#collapseCep" aria-controls="collapseCep">CEP
-				</button>
-				<button class="btn btn-primary" type="button" data-toggle="collapse"
-					data-target="#collapseUf" aria-controls="collapseUf">UF</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseNome"
+					aria-controls="collapseNome">Nome</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseCep"
+					aria-controls="collapseCep">CEP</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseUf"
+					aria-controls="collapseUf">UF</button>
 			</p>
 
 			<div class="row">
@@ -37,6 +38,7 @@
 								<input class="form-control mr-sm-2" type="search"
 									placeholder="nome" aria-label="Search" th:name="nome" />
 								<button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+
 							</form>
 						</nav>
 
@@ -51,7 +53,8 @@
 							<form class="form-inline" method="GET"
 								th:action="@{/unidades/buscar/cep}">
 								<input class="form-control mr-sm-2" type="search"
-									placeholder="cep" aria-label="Search" th:name="cep" />
+									placeholder="cep" aria-label="Search" th:name="cep"
+									data-mask="00000-000" />
 								<button class="btn btn-outline-success my-2 my-sm-0">Search</button>
 							</form>
 						</nav>
@@ -66,8 +69,12 @@
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
 								th:action="@{/unidades/buscar/uf}">
-								<input class="form-control mr-sm-2" type="search"
-									placeholder="uf" aria-label="Search" th:name="uf" />
+								<select class="form-control mr-sm-2" th:name="uf"
+									aria-label="Search">
+									<option value="">UF</option>
+									<option th:each="uf : ${ufs}" th:value="${uf}"
+										th:text="${uf.sigla}"></option>
+								</select>
 								<button class="btn btn-outline-success my-2 my-sm-0">Search</button>
 							</form>
 						</nav>
