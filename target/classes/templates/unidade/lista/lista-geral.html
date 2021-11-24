@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html layout:decorate="~{/layout/layout-adm}">
+<html layout:decorate="~{/layout/layout-geral}">
 <head>
 <meta charset="UTF-8">
 </head>
 <body>
 	<section class="layout-content" layout:fragment="corpo">
 
-		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-inverse navbar-dark bg-dark">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand ">Listar Unidades</a>
@@ -34,7 +34,7 @@
 					<div class="collapse" id="collapseNome">
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
-								th:action="@{/unidades/buscar/nome}">
+								th:action="@{/unidades/buscar/nome-geral}">
 								<input class="form-control mr-sm-2" type="search"
 									placeholder="nome" aria-label="Search" th:name="nome" />
 								<button class="btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -51,7 +51,7 @@
 					<div class="collapse" id="collapseCep">
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
-								th:action="@{/unidades/buscar/cep}">
+								th:action="@{/unidades/buscar/cep-geral}">
 								<input class="form-control mr-sm-2" type="search"
 									placeholder="cep" aria-label="Search" th:name="cep"
 									data-mask="00000-000" />
@@ -68,7 +68,7 @@
 					<div class="collapse" id="collapseUf">
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
-								th:action="@{/unidades/buscar/uf}">
+								th:action="@{/unidades/buscar/uf-geral}">
 								<select class="form-control mr-sm-2" th:name="uf"
 									aria-label="Search">
 									<option value="">UF</option>
@@ -95,7 +95,6 @@
 							<th>Número</th>
 							<th>UF</th>
 							<th>CEP</th>
-							<th>Ação</th>
 						</tr>
 					</thead>
 
@@ -109,16 +108,6 @@
 							<td th:text="*{u.endereco.numero}"></td>
 							<td th:text="*{u.endereco.uf}"></td>
 							<td th:text="*{u.endereco.cep}"></td>
-							<td colspan="2"><a class="btn btn-info btn-sm"
-								th:href="@{/unidades/editar/{id} (id = ${u.id})}" role="button">
-									<span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-							</a>
-								<button
-									th:id="${#strings.concat('btn_unidades/excluir/', u.id)}"
-									type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-									data-target="#myModal">
-									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
-								</button></td>
 						</tr>
 					</tbody>
 				</table>

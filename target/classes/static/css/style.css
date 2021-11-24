@@ -61,3 +61,11 @@ body {
 .navbar-principal{
 	margin-bottom: 20px;
 }
+
+.main-content .input-pesquisa{
+	float: left;
+}
+
+.main-content .btn-pesquisa{
+	float: right;
+}

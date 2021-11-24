@@ -18,8 +18,9 @@
 
 			<div th:replace="fragments/alert"></div>
 
-			<form th:action="@{/unidades/salvar}" th:object="${unidade}"
-				method="POST">
+			<form
+				th:action="${unidade.id == null} ? @{/unidades/salvar} : @{/unidades/editar}"
+				th:object="${unidade}" method="POST">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Nome da
 						unidade</span> <input type="text" class="form-control" id="nome"
@@ -95,7 +96,8 @@
 					<textarea class="form-control" aria-label="With textarea"
 						id="complemento" th:field="*{endereco.complemento}"></textarea>
 				</div>
-				<br /> <input type="hidden" />
+				<br /> 
+				<input type="hidden" id="id" th:field="*{id}" />
 				<button type="submit" class="btn btn-primary">Cadastrar</button>
 			</form>
 		</div>

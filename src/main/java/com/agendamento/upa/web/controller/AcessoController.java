@@ -37,7 +37,7 @@ public class AcessoController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("acesso", new Acesso());
 		if(result.hasErrors()) {
-			model.setViewName("Acesso/entrar-adm");
+			model.setViewName("Acesso/administrador");
 		}
 		
 		Acesso novoAcesso = acessoService.login(acesso.getCpf(), Util.md5(acesso.getSenha()));
