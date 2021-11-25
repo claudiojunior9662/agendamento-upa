@@ -88,6 +88,11 @@
 			<artifactId>github-com-twbs-icons</artifactId>
 			<version>1.6.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>ng2-date-time-picker</artifactId>
+			<version>1.0.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>

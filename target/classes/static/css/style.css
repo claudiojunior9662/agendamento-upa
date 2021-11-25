@@ -69,3 +69,15 @@ body {
 .main-content .btn-pesquisa{
 	float: right;
 }
+
+.div-alerta-int{
+	background-color: #dc3545;
+	box-shadow: 1px 5px 30px black;
+	text-align: center;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.div-alerta-ext{
+	width: 100%;
+}

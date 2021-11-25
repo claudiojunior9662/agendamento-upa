@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/layout-geral}">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand ">Novo Agendamento</a>
+				</div>
+			</div>
+		</nav>
+
+		<form action="">
+
+			<div class="container">
+				<div class="row p-4">
+					<div class="col">
+						<h3>Unidade</h3>
+						<div class="input-group">
+							<span class="input-group-text" id="basic-addon1"><img
+								src="https://img.icons8.com/ios-glyphs/30/000000/hospital-2.png" /></span>
+							<select class="form-select" aria-label="Default select example">
+								<option selected>Selecione...</option>
+								<option value="1">UPA nº 1</option>
+								<option value="2">UPA nº 2</option>
+								<option value="3">UPA nº 3</option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<h3>Cidade</h3>
+						<label>Valparaíso - GO</label>
+					</div>
+					<div class="col">
+						<h3>Especialidade</h3>
+						<div class="input-group">
+							<span class="input-group-text" id="basic-addon1"><img
+								src="https://img.icons8.com/ios-glyphs/30/000000/heart-health.png" /></span>
+							<select class="form-select" aria-label="Default select example">
+								<option selected>Selecione...</option>
+								<option value="1">Cardiologia</option>
+								<option value="2">Oftalmologia</option>
+								<option value="3">Ortopedia</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row p-4">
+					<div class="col div-alerta-ext">
+						<div class="div-alerta-int p-2" role="alert">
+							<strong>Selecione uma data disponível no calendário ao
+								lado para visualizar os horários disponíveis.</strong>
+						</div>
+					</div>
+					<div class="col">
+						<h3>Data</h3>
+						<div class="input-group">
+							<div data-provide="datepicker">
+								<input type="text" class="form-control" id="exemplo">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<h3>Hora</h3>
+						<div class="input-group">
+							<span class="input-group-text" id="basic-addon1"><img
+								src="https://img.icons8.com/ios-glyphs/30/000000/watches-front-view.png" /></span>
+							<select class="form-select" aria-label="Default select example">
+								<option selected>Selecione...</option>
+								<option value="1">09:00</option>
+								<option value="2">10:20</option>
+								<option value="3">12:00</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="d-grid gap-2 p-4">
+					<button type="button" class="btn btn-success">Agendar</button>
+				</div>
+			</div>
+		</form>
+
+
+
+
+	</section>
+
+	<script type="text/javascript">
+		$('#exemplo').datepicker({
+			multidate : false
+		});
+	</script>
+
+</body>
+</html>
