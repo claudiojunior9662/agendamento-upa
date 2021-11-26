@@ -35,9 +35,15 @@
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
 								th:action="@{/unidades/buscar/nome-adm}">
-								<input class="form-control mr-sm-2 input-pesquisa" type="search"
-									placeholder="nome" aria-label="Search" th:name="nome" />
-								<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Search</button>
+								<div class="row">
+									<div class="col div-pesquisa">
+										<input class="form-control input-pesquisa" type="search"
+											placeholder="nome" aria-label="Search" th:name="nome" />
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
 							</form>
 						</nav>
 
@@ -51,10 +57,16 @@
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
 								th:action="@{/unidades/buscar/cep-adm}">
-								<input class="form-control mr-sm-2 input-pesquisa" type="search"
-									placeholder="cep" aria-label="Search" th:name="cep"
-									data-mask="00000-000" />
-								<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Search</button>
+								<div class="row">
+									<div class="col div-pesquisa">
+										<input class="form-control mr-sm-2 input-pesquisa"
+											type="search" placeholder="cep" aria-label="Search"
+											th:name="cep" data-mask="00000-000" />
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
 							</form>
 						</nav>
 
@@ -68,13 +80,19 @@
 						<nav class="navbar navbar-light bg-light">
 							<form class="form-inline" method="GET"
 								th:action="@{/unidades/buscar/uf-adm}">
-								<select class="form-control mr-sm-2 input-pesquisa" th:name="uf"
-									aria-label="Search">
-									<option value="">UF</option>
-									<option th:each="uf : ${ufs}" th:value="${uf}"
-										th:text="${uf.sigla}"></option>
-								</select>
-								<button class="btn btn-success my-2 my-sm-0 ">Search</button>
+								<div class="row">
+									<div class="col div-pesquisa">
+										<select class="form-control mr-sm-2 input-pesquisa"
+											th:name="uf" aria-label="Search">
+											<option value="">UF</option>
+											<option th:each="uf : ${ufs}" th:value="${uf}"
+												th:text="${uf.sigla}"></option>
+										</select>
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
 							</form>
 						</nav>
 					</div>

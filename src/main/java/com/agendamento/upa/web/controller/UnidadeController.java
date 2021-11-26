@@ -84,6 +84,13 @@ public class UnidadeController {
 		attr.addFlashAttribute("success", "Unidade editada com sucesso.");
 		return "redirect:/unidades/cadastrar";
 	}
+	
+	@GetMapping("/excluir/{id}")
+	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
+		unidadeService.excluir(id);
+		attr.addFlashAttribute("success", "Unidade removido com sucesso.");
+		return "redirect:/unidades/listar";
+	}
 
 	// --------------------------------------------------------------------------------------------------------
 
