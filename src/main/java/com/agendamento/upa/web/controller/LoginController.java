@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.agendamento.upa.domain.Acesso;
@@ -17,27 +18,28 @@ import com.agendamento.upa.service.AcessoService;
 import com.agendamento.upa.util.Util;
 
 @Controller
-public class AcessoController {
+@RequestMapping("/login")
+public class LoginController {
 
 	@Autowired
 	private AcessoService acessoService;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String geral() {
-		return "/login/login-geral";
+		return "/login/geral";
 	}
 	
 	@GetMapping("/administrador")
 	public String administrador(Acesso acesso) {
-		return "/login/login-administrador";
+		return "/login/administrador";
 	}
 	
-	@PostMapping("/entrar-adm")
+	@PostMapping("/administrador/entrar")
 	public ModelAndView entrarAdm(@Valid Acesso acesso, BindingResult result, HttpSession session) throws NoSuchAlgorithmException {
 		ModelAndView model = new ModelAndView();
 		model.addObject("acesso", new Acesso());
 		if(result.hasErrors()) {
-			model.setViewName("Acesso/administrador");
+			model.setViewName("Login/administrador");
 		}
 		
 		Acesso novoAcesso = acessoService.login(acesso.getCpf(), Util.md5(acesso.getSenha()));

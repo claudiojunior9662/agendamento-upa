@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/inicial}">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{principal.titulo}"></title>
+</head>
+<body>
+	<div layout:fragment="header"
+		th:replace="fragments/header :: cadastroInicial"></div>
+
+	<section layout:fragment="corpo" class="layout-content">
+
+		<nav class="navbar navbar-inverse navbar-dark bg-dark" style="margin-top: 30px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand ">Cadastro Inicial</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="main-content" id="cadastro">
+			<div th:replace="fragments/alert"></div>
+			<form action="" object="">
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Nome do
+								paciente</span> <input type="text" class="form-control"
+								aria-label="Nome" aria-describedby="basic-addon1" id="nome"
+								field="">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número
+								SUS</span> <input type="text" class="form-control"
+								aria-label="Número SUS" aria-describedby="basic-addon1"
+								id="numero-sus" field="">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CPF</span> <input
+								type="text" class="form-control" aria-label="CPF"
+								aria-describedby="basic-addon1" id="cpf" field=""
+								data-mask="000.000.000-00">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Data de
+								nascimento</span> <input type="date" class="form-control"
+								id="dataEntrada" />
+						</div>
+					</div>
+				</div>
+
+				<br />
+				<h3>Endereço</h3>
+				<br />
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Logradouro</span>
+							<input type="text" class="form-control" aria-label="Logradouro"
+								aria-describedby="basic-addon1" id="logradouro">
+						</div>
+
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Bairro</span> <input
+								type="text" class="form-control" aria-label="Bairro"
+								aria-describedby="basic-addon1" id="bairro">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Cidade</span> <input
+								type="text" class="form-control" aria-label="Cidade"
+								aria-describedby="basic-addon1" id="cidade">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CEP</span> <input
+								type="text" class="form-control" aria-label="CEP"
+								aria-describedby="basic-addon1" data-mask="00000-000" id="cep">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">UF</span> <select
+								id="uf" class="form-select">
+								<option value="">Selecione...</option>
+								<option th:each="uf : ${ufs}" th:value="${uf}"
+									th:text="${uf.sigla}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número</span> <input
+								type="text" class="form-control" aria-label="Número"
+								aria-describedby="basic-addon1" id="Numero">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group">
+							<span class="input-group-text">Complemento</span>
+							<textarea class="form-control" aria-label="With textarea"
+								id="complemento"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<br />
+				<h3>Contato</h3>
+				<br />
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Tipo de
+								telefone</span> <select id="tipo-telefone" class="form-select">
+								<option value="">Selecione...</option>
+								<option value="">Fixo</option>
+								<option value="">Celular</option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número</span> <input
+								type="text" class="form-control" aria-label="Número"
+								aria-describedby="basic-addon1" id="numero-telefone">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">E-mail</span> <input
+								type="text" class="form-control" aria-label="Email"
+								aria-describedby="basic-addon1" id="email">
+						</div>
+					</div>
+				</div>
+
+				<br /> <input type="hidden" id="id" />
+				<button type="button" class="btn btn-success">Finalizar cadastro</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

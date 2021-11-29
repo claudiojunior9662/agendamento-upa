@@ -10,8 +10,22 @@ public class AgendamentoController {
 	//Paginação--------------------------------------------------------------------------------------------------
 	@GetMapping("/novo")
 	public String agendamentoGeral() {
-		return "agendamento/agendamento-geral";
+		return "agendamento/geral";
 	}
 	
+	@GetMapping("/administrador/novo")
+	public String agendamentoAdm() {
+		return "agendamento/administrador";
+	}
+	
+	@GetMapping("/listar")
+	public String listarGeral() {
+		return "agendamento/lista/geral";
+	}
+	
+	@GetMapping("/administrador/listar")
+	public String listarAdm() {
+		return "agendamento/lista/administrador";
+	}
 	//-----------------------------------------------------------------------------------------------------------
 }

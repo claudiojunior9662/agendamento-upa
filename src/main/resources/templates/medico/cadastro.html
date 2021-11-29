@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/administrador}">
+<head>
+<meta charset="UTF-8">
+<title>SisUPA - Cadastro de Médicos</title>
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-inverse navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand ">Cadastrar Médicos</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="main-content" id="cadastro">
+			<div th:replace="fragments/alert"></div>
+			<form action="" object="">
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Nome
+								Completo</span> <input type="text" class="form-control"
+								aria-label="Nome" aria-describedby="basic-addon1" id="nome"
+								field="">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CPF</span> <input
+								type="text" class="form-control" aria-label="CPF"
+								aria-describedby="basic-addon1" id="cpf" field=""
+								data-mask="000.000.000-00">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CRM</span> <input
+								type="text" class="form-control" aria-label="CRM"
+								aria-describedby="basic-addon1" id="crm" field=""
+								data-mask="0000000">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">UF de
+								Expedição</span> <select id="uf" class="form-select">
+								<option value="">Selecione...</option>
+								<option th:each="uf : ${ufs}" th:value="${uf}"
+									th:text="${uf.sigla}"></option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<h3>Endereço</h3>
+				<br />
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Logradouro</span>
+							<input type="text" class="form-control" aria-label="Logradouro"
+								aria-describedby="basic-addon1" id="logradouro">
+						</div>
+
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Bairro</span> <input
+								type="text" class="form-control" aria-label="Bairro"
+								aria-describedby="basic-addon1" id="bairro">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Cidade</span> <input
+								type="text" class="form-control" aria-label="Cidade"
+								aria-describedby="basic-addon1" id="cidade">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CEP</span> <input
+								type="text" class="form-control" aria-label="CEP"
+								aria-describedby="basic-addon1" data-mask="00000-000" id="cep">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">UF</span> <select
+								id="uf" class="form-select">
+								<option value="">Selecione...</option>
+								<option th:each="uf : ${ufs}" th:value="${uf}"
+									th:text="${uf.sigla}"></option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número</span> <input
+								type="text" class="form-control" aria-label="Número"
+								aria-describedby="basic-addon1" id="Numero">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group">
+							<span class="input-group-text">Complemento</span>
+							<textarea class="form-control" aria-label="With textarea"
+								id="complemento"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<br />
+				<h3>Contato</h3>
+				<br />
+
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Tipo de
+								telefone</span> <select id="tipo-telefone" class="form-select">
+								<option value="">Selecione...</option>
+								<option value="">Fixo</option>
+								<option value="">Celular</option>
+							</select>
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número</span> <input
+								type="text" class="form-control" aria-label="Número"
+								aria-describedby="basic-addon1" id="numero-telefone">
+						</div>
+					</div>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">E-mail</span> <input
+								type="text" class="form-control" aria-label="Email"
+								aria-describedby="basic-addon1" id="email">
+						</div>
+					</div>
+				</div>
+
+				<br />
+				<h3>Especialidades</h3>
+				<br />
+
+				<div class="row ">
+					<div class="col">
+						<select class="form-select" multiple
+							aria-label="multiple select example">
+							<option value="" disabled="disabled">Especialidades
+								Disponíveis</option>
+							<option value="1">Cardiologia</option>
+							<option value="2">Fisioterapia</option>
+						</select>
+					</div>
+					<div class="col">
+						<div class="row p-2 justify-content-center">
+							<button type="button" class="btn btn-success" style="width: 50%;"
+								title="Selecionar Especialidades">-></button>
+						</div>
+						<div class="row p-2 justify-content-center">
+							<button type="button" class="btn btn-danger" style="width: 50%;"
+								title="Retirar Especialidades"><-</button>
+						</div>
+					</div>
+					<div class="col">
+						<select class="form-select" multiple
+							aria-label="multiple select example">
+							<option value="" disabled="disabled">Especialidades
+								Selecionadas</option>
+						</select>
+					</div>
+				</div>
+
+				<br />
+				<h3>Unidades</h3>
+				<br />
+
+				<div class="row ">
+					<div class="col">
+						<select class="form-select" multiple
+							aria-label="multiple select example">
+							<option value="" disabled="disabled">Unidades
+								Disponíveis</option>
+							<option value="1">UPA nº 1</option>
+							<option value="2">UPA nº 2</option>
+						</select>
+					</div>
+					<div class="col">
+						<div class="row p-2 justify-content-center">
+							<button type="button" class="btn btn-success" style="width: 50%;"
+								title="Selecionar Unidades">-></button>
+						</div>
+						<div class="row p-2 justify-content-center">
+							<button type="button" class="btn btn-danger" style="width: 50%;"
+								title="Retirar Unidades"><-</button>
+						</div>
+					</div>
+					<div class="col">
+						<select class="form-select" multiple
+							aria-label="multiple select example">
+							<option value="" disabled="disabled">Unidades
+								Selecionadas</option>
+						</select>
+					</div>
+				</div>
+
+				<br /> <input type="hidden" id="id"/>
+				<button type="button" class="btn btn-success">Cadastrar</button>
+
+			</form>
+		</div>
+
+	</section>
+</body>
+</html>

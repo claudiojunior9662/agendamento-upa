@@ -3,7 +3,6 @@
 	xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<title>Agendamento</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
@@ -22,22 +21,14 @@
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body class="fundo-padrao">
-	<header th:replace="fragments/header :: cabecalho">
-		<div>header</div>
+	<header>
+		<div layout:fragment="header"></div>
 	</header>
 
 	<div class="layout-main">
-		<aside>
-			<nav th:replace="fragments/navbar :: navbar-geral">
-				<span>menu</span>
-			</nav>
-		</aside>
-
 		<div class="div-corpo">
 			<section layout:fragment="corpo"></section>
 		</div>
-		
-		
 	</div>
 
 	<!-- Bootstrap core JavaScript
@@ -54,7 +45,7 @@
 		crossorigin="anonymous"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
-	
+
 
 	<script type="text/javascript">
 		var url = '';
@@ -83,7 +74,7 @@
 				$(".sidebar").toggleClass("sidebar-open");
 			})
 		});
-		
+
 		$('#exemplo input').datepicker({
 			multidate : true
 		});

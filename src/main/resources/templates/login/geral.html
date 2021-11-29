@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Agendamento</title>
+<title th:text="#{principal.titulo}"></title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
@@ -18,7 +18,7 @@
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body class="fundo-padrao">
-	<header th:replace="fragments/header :: cabecalho">
+	<header th:replace="fragments/header :: cabecalhoInicial">
 		<div>header</div>
 	</header>
 

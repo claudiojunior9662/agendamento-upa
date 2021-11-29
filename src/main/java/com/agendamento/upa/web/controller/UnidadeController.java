@@ -27,21 +27,21 @@ public class UnidadeController {
 	private UnidadeService unidadeService;
 
 	// Paginação-----------------------------------------------------------------------------------------------
-	@GetMapping("/cadastrar")
+	@GetMapping("/administrador/cadastrar")
 	public String cadastrar(Unidade unidade) {
-		return "/unidade/cadastro";
+		return "unidade/cadastro";
 	}
 
-	@GetMapping("/listar-adm")
+	@GetMapping("/administrador/listar")
 	public String listarAdm(ModelMap model) {
 		model.addAttribute("unidades", unidadeService.buscarTodos());
-		return "/unidade/lista/lista-adm";
+		return "unidade/lista/administrador";
 	}
 
-	@GetMapping("/listar-geral")
+	@GetMapping("/listar")
 	public String listarGeral(ModelMap model) {
 		model.addAttribute("unidades", unidadeService.buscarTodos());
-		return "/unidade/lista/lista-geral";
+		return "/unidade/lista/geral";
 	}
 
 	// --------------------------------------------------------------------------------------------------------

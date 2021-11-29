@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<header th:fragment="cabecalho">
+
+	<header th:fragment="cabecalhoInicial">
 		<nav class="navbar navbar-inverse bg-white">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -16,10 +17,47 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<i class="bi bi-calendar-check"></i>
-					<a class="navbar-brand " href="#">Marcar consulta</a>
+					<span class="navbar-brand" th:text="#{titulo.aba(#{principal.titulo}, Entrar)}"></span>
 				</div>
 			</div>
 		</nav>
 	</header>
+	
+	<header th:fragment="cadastroInicial">
+		<nav class="navbar navbar-inverse bg-white">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					Logo
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<i class="bi bi-calendar-check"></i>
+					<span class="navbar-brand" th:text="#{titulo.aba(#{principal.titulo}, Cadastro)}"></span>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<header th:fragment="homeGeral">
+		<nav class="navbar navbar-inverse bg-white">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					Logo
+				</div>
+			</div>
+		</nav>
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<i class="bi bi-calendar-check"></i>
+					<span class="navbar-brand">Geral</span>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
 </body>
 </html>

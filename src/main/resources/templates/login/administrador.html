@@ -27,7 +27,7 @@
 			<h3>Login - Administrador</h3>
 			<p></p>
 			<div th:replace="fragments/alert"></div>
-			<form method="post" th:action="@{/entrar-adm}" th:object="${acesso}">
+			<form method="post" th:action="@{/login/administrador/entrar}" th:object="${acesso}">
 				<div class="mb-3">
 					<label for="nome" class="form-label">CPF</label> <input type="text"
 						class="form-control" id="cpf" aria-describedby="emailHelp"

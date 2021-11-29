@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/administrador}">
+<head>
+<meta charset="UTF-8">
+<title>SisUPA - Lista de Médicos</title>
+</head>
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-inverse navbar-dark bg-dark">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand ">Listar Médicos</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="main-content" id="lista">
+
+			<p>
+				<i class="oi oi-magnifying-glass"></i><span></span>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseNome"
+					aria-controls="collapseNome">Nome</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseCpf"
+					aria-controls="collapseNome">CPF</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseCrm"
+					aria-controls="collapseNome">CRM</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseEspecialidade"
+					aria-controls="collapseNome">Especialidade</button>
+				<button class="btn btn-primary" type="button"
+					data-bs-toggle="collapse" data-bs-target="#collapseUnidade"
+					aria-controls="collapseNome">Unidade</button>
+			</p>
+
+			<div class="row">
+				<div class="col">
+					<div class="collapse" id="collapseNome">
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" method="GET" action="">
+								<div class="row">
+									<div class="col div-pesquisa">
+										<input class="form-control input-pesquisa" type="search"
+											placeholder="Nome do médico" aria-label="Search"
+											th:name="nome" />
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
+							</form>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="collapse" id="collapseCpf">
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" method="GET" action="">
+								<div class="row">
+									<div class="col div-pesquisa">
+										<input class="form-control input-pesquisa" type="search"
+											placeholder="CPF do médico" aria-label="Search" th:name="cpf" />
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
+							</form>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="collapse" id="collapseCrm">
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" method="GET" action="">
+								<div class="row">
+									<div class="col div-pesquisa">
+										<input class="form-control input-pesquisa" type="search"
+											placeholder="CRM do médico" aria-label="Search" th:name="crm" />
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
+							</form>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="collapse" id="collapseEspecialidade">
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" method="GET" action="">
+								<div class="row">
+									<div class="col div-pesquisa">
+										<select class="form-control mr-sm-2" th:name="especialidadeId"
+											aria-label="Search">
+											<option value="">Especialidade</option>
+											<option></option>
+										</select>
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
+							</form>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="collapse" id="collapseUnidade">
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" method="GET" action="">
+								<div class="row">
+									<div class="col div-pesquisa">
+										<select class="form-control mr-sm-2" th:name="especialidadeId"
+											aria-label="Search">
+											<option value="">Unidade</option>
+											<option></option>
+										</select>
+									</div>
+									<div class="col div-pesquisa">
+										<button class="btn btn-success my-2 my-sm-0 btn-pesquisa">Filtrar</button>
+									</div>
+								</div>
+							</form>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="table-responsive">
+				<div th:replace="fragments/alert"></div>
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nome</th>
+							<th>CRM</th>
+							<th>UF</th>
+							<th>Endereço</th>
+							<th>Contato</th>
+							<th>Especialidades</th>
+							<th>Unidades</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<button type="button" class="btn btn-secondary btn-sm"
+									data-container="body" data-toggle="popover"
+									data-placement="top">
+									<span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
+								</button>
+							</td>
+							<td>
+								<button type="button" class="btn btn-secondary btn-sm"
+									data-container="body" data-toggle="popover"
+									data-placement="top">
+									<span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
+								</button>
+							</td>
+							<td></td>
+							<td></td>
+							<td colspan="2"><a class="btn btn-info btn-sm" href="#"
+								role="button"> <span class="oi oi-brush" title="Editar"
+									aria-hidden="true"></span>
+							</a>
+								<button type="button" class="btn btn-danger btn-sm"
+									data-toggle="modal" data-target="#myModal">
+									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
+								</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div th:replace="fragments/modal :: modal"></div>
+	</section>
+</body>
+</html>

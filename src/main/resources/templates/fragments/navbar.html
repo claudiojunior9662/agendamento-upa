@@ -5,7 +5,8 @@
 </head>
 <body>
 	<nav
-		class="navbar navbar-expand-lg navbar-light bg-light navbar-principal" th:fragment="navbar-adm">
+		class="navbar navbar-expand-lg navbar-light bg-light navbar-principal"
+		th:fragment="navbar-adm">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">SisUPA</a>
 			<button class="navbar-toggler" type="button"
@@ -23,9 +24,9 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Unidades </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item"
-								th:href="@{/unidades/cadastrar}">Cadastrar</a></li>
+								th:href="@{/unidades/administrador/cadastrar}">Cadastrar</a></li>
 							<li><a class="dropdown-item"
-								th:href="@{/unidades/listar-adm}">Listar</a></li>
+								th:href="@{/unidades/administrador/listar}">Listar</a></li>
 						</ul></li>
 
 					<li class="nav-item dropdown"><a
@@ -34,8 +35,10 @@
 						data-bs-toggle="dropdown" aria-expanded="false">
 							Especialidades </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Cadastrar</a></li>
-							<li><a class="dropdown-item" href="#">Listar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/especialidades/administrador/cadastrar}">Cadastrar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/especialidades/administrador/listar}">Listar</a></li>
 						</ul></li>
 
 					<li class="nav-item dropdown"><a
@@ -43,8 +46,10 @@
 						id="navbarDropdownMenuLink" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> Pacientes </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Cadastrar</a></li>
-							<li><a class="dropdown-item" href="#">Listar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/pacientes/administrador/cadastrar}">Cadastrar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/pacientes/administrador/listar}">Listar</a></li>
 						</ul></li>
 
 					<li class="nav-item dropdown"><a
@@ -52,8 +57,10 @@
 						id="navbarDropdownMenuLink" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> Médicos </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Cadastrar</a></li>
-							<li><a class="dropdown-item" href="#">Listar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/medicos/administrador/cadastrar}">Cadastrar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/medicos/administrador/listar}">Listar</a></li>
 						</ul></li>
 
 					<li class="nav-item dropdown"><a
@@ -62,23 +69,26 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Agendamentos
 					</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" th:href="@{/agendamentos/novo}">Novo</a></li>
-							<li><a class="dropdown-item" href="#">Listar</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/agendamentos/administrador/novo}">Novo</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/agendamentos/administrador/listar}">Listar</a></li>
 						</ul></li>
 				</ul>
 			</div>
 			<div>
-				<label>
-					<strong>Administrador, 000.000.000-00</strong>
-					<span>(<a href="#">Sair</a>)</span>
+				<label> <strong>Administrador, 000.000.000-00</strong> <span>(<a
+						href="#">Sair</a>)
+				</span>
 				</label>
 			</div>
 		</div>
 	</nav>
 
 	<nav
-		class="navbar navbar-expand-lg navbar-light bg-light navbar-principal" th:fragment="navbar-geral">
-		<div class="container-fluid" >
+		class="navbar navbar-expand-lg navbar-light bg-light navbar-principal"
+		th:fragment="navbar-geral">
+		<div class="container-fluid">
 			<a class="navbar-brand" href="#">SisUPA</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -95,24 +105,23 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Agendamentos
 					</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Novo</a></li>
-							<li><a class="dropdown-item" href="#">Listar</a></li>
+							<li><a class="dropdown-item" th:href="@{/agendamentos/novo}">Novo</a></li>
+							<li><a class="dropdown-item"
+								th:href="@{/agendamentos/listar}">Listar</a></li>
 						</ul></li>
 
 					<li class="nav-item"><a class="nav-link" aria-current="page"
-						th:href="@{/unidades/listar-geral}">Unidades</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Especialidades</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Pacientes</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Médicos</a>
-					</li>
+						th:href="@{/unidades/listar}">Unidades</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/especialidades/listar}">Especialidades</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/medicos/listar}">Médicos</a></li>
 				</ul>
 			</div>
 			<div>
-				<label>
-					<strong>Fulano de Tal, 000.000.000-00</strong>
-					<span>(<a href="#">Sair</a>)</span>
+				<label> <strong>Fulano de Tal, 000.000.000-00</strong> <span>(<a
+						href="#">Sair</a>)
+				</span>
 				</label>
 			</div>
 		</div>

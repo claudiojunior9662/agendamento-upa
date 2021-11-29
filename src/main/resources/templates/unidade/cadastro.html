@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html layout:decorate="~{/layout/layout-adm}">
+<html layout:decorate="~{/layout/administrador}">
 <head>
 <meta charset="UTF-8">
+<title>SisUPA - Cadastro de Unidades</title>
 </head>
 <body>
 	<section class="layout-content" layout:fragment="corpo">
 
-		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-inverse navbar-dark bg-dark">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand ">Cadastrar Unidades</a>
@@ -33,59 +34,84 @@
 				<h3>Endereço</h3>
 				<br />
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Logradouro</span>
-					<input type="text" class="form-control" aria-label="Logradouro"
-						aria-describedby="basic-addon1" id="logradouro"
-						th:field="*{endereco.logradouro}"
-						th:classappend="${#fields.hasErrors('endereco.logradouro')} ? 'is-invalid'">
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.logradouro}"></span>
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Logradouro</span>
+							<input type="text" class="form-control" aria-label="Logradouro"
+								aria-describedby="basic-addon1" id="logradouro"
+								th:field="*{endereco.logradouro}"
+								th:classappend="${#fields.hasErrors('endereco.logradouro')} ? 'is-invalid'">
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.logradouro}"></span>
+							</div>
+						</div>
+
 					</div>
-					<span class="input-group-text" id="basic-addon1">Bairro</span> <input
-						type="text" class="form-control" aria-label="Bairro"
-						aria-describedby="basic-addon1" id="bairro"
-						th:field="*{endereco.bairro}"
-						th:classappend="${#fields.hasErrors('endereco.bairro')} ? 'is-invalid'">
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.bairro}"></span>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Bairro</span> <input
+								type="text" class="form-control" aria-label="Bairro"
+								aria-describedby="basic-addon1" id="bairro"
+								th:field="*{endereco.bairro}"
+								th:classappend="${#fields.hasErrors('endereco.bairro')} ? 'is-invalid'">
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.bairro}"></span>
+							</div>
+						</div>
 					</div>
-					<span class="input-group-text" id="basic-addon1">Cidade</span> <input
-						type="text" class="form-control" aria-label="Cidade"
-						aria-describedby="basic-addon1" id="cidade"
-						th:field="*{endereco.cidade}"
-						th:classappend="${#fields.hasErrors('endereco.cidade')} ? 'is-invalid'">
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.cidade}"></span>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Cidade</span> <input
+								type="text" class="form-control" aria-label="Cidade"
+								aria-describedby="basic-addon1" id="cidade"
+								th:field="*{endereco.cidade}"
+								th:classappend="${#fields.hasErrors('endereco.cidade')} ? 'is-invalid'">
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.cidade}"></span>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">CEP</span> <input
-						type="text" class="form-control" aria-label="CEP"
-						aria-describedby="basic-addon1" data-mask="00000-000" id="cep"
-						th:field="*{endereco.cep}"
-						th:classappend="${#fields.hasErrors('endereco.cep')} ? 'is-invalid'">
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.cep}"></span>
+				<div class="row">
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">CEP</span> <input
+								type="text" class="form-control" aria-label="CEP"
+								aria-describedby="basic-addon1" data-mask="00000-000" id="cep"
+								th:field="*{endereco.cep}"
+								th:classappend="${#fields.hasErrors('endereco.cep')} ? 'is-invalid'">
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.cep}"></span>
+							</div>
+						</div>
 					</div>
-					<span class="input-group-text" id="basic-addon1">UF</span> <select
-						id="uf" class="form-select" th:field="*{endereco.uf}"
-						th:classappend="${#fields.hasErrors('endereco.uf')} ? 'is-invalid'">
-						<option value="">Selecione...</option>
-						<option th:each="uf : ${ufs}" th:value="${uf}"
-							th:text="${uf.sigla}"></option>
-					</select>
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.uf}"></span>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">UF</span> <select
+								id="uf" class="form-select" th:field="*{endereco.uf}"
+								th:classappend="${#fields.hasErrors('endereco.uf')} ? 'is-invalid'">
+								<option value="">Selecione...</option>
+								<option th:each="uf : ${ufs}" th:value="${uf}"
+									th:text="${uf.sigla}"></option>
+							</select>
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.uf}"></span>
+							</div>
+						</div>
 					</div>
-					<span class="input-group-text" id="basic-addon1">Número</span> <input
-						type="text" class="form-control" aria-label="Número"
-						aria-describedby="basic-addon1" id="Numero"
-						th:field="*{endereco.numero}"
-						th:classappend="${#fields.hasErrors('endereco.numero')} ? 'is-invalid'">
-					<div class="invalid-feedback">
-						<span th:errors="*{endereco.numero}"></span>
+					<div class="col">
+						<div class="input-group mb-3">
+							<span class="input-group-text" id="basic-addon1">Número</span> <input
+								type="text" class="form-control" aria-label="Número"
+								aria-describedby="basic-addon1" id="Numero"
+								th:field="*{endereco.numero}"
+								th:classappend="${#fields.hasErrors('endereco.numero')} ? 'is-invalid'">
+							<div class="invalid-feedback">
+								<span th:errors="*{endereco.numero}"></span>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -94,9 +120,8 @@
 					<textarea class="form-control" aria-label="With textarea"
 						id="complemento" th:field="*{endereco.complemento}"></textarea>
 				</div>
-				<br /> 
-				<input type="hidden" id="id" th:field="*{id}" />
-				<button type="submit" class="btn btn-primary">Cadastrar</button>
+				<br /> <input type="hidden" id="id" th:field="*{id}" />
+				<button type="submit" class="btn btn-success">Cadastrar</button>
 			</form>
 		</div>
 	</section>
