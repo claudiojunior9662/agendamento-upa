@@ -17,29 +17,17 @@
 	crossorigin="anonymous">
 <link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet" />
 
-
 <!-- Custom styles for this template -->
 <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body class="fundo-padrao">
-	<header>
-		<nav class="navbar navbar-inverse bg-white">
-			<div class="container-fluid">
-				<div class="navbar-header"></div>
-			</div>
-		</nav>
-		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<i class="bi bi-calendar-check"></i> <a class="navbar-brand ">Administração</a>
-				</div>
-			</div>
-		</nav>
+	<header th:replace="fragments/header :: homeGeral">
+		<div>header</div>
 	</header>
 
 	<div class="layout-main">
 		<aside>
-			<nav th:replace="fragments/navbar :: navbar-adm">
+			<nav th:replace="fragments/navbar :: navbar-geral">
 				<span>menu</span>
 			</nav>
 		</aside>
@@ -47,8 +35,8 @@
 		<div class="div-corpo">
 			<section layout:fragment="corpo"></section>
 		</div>
-
-
+		
+		
 	</div>
 
 	<!-- Bootstrap core JavaScript
@@ -65,6 +53,7 @@
 		crossorigin="anonymous"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+	
 
 	<script type="text/javascript">
 		var url = '';
@@ -93,15 +82,10 @@
 				$(".sidebar").toggleClass("sidebar-open");
 			})
 		});
-
+		
 		$('#exemplo input').datepicker({
 			multidate : true
 		});
-		
-		var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-		var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-		  return new bootstrap.Popover(popoverTriggerEl)
-		})
 	</script>
 </body>
 </html>

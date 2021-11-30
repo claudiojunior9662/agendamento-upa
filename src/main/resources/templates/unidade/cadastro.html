@@ -2,7 +2,7 @@
 <html layout:decorate="~{/layout/administrador}">
 <head>
 <meta charset="UTF-8">
-<title>SisUPA - Cadastro de Unidades</title>
+<title th:text="#{titulo.aba(#{principal.titulo}, #{unidade.titulo.cadastrar})}"></title>
 </head>
 <body>
 	<section class="layout-content" layout:fragment="corpo">
@@ -10,7 +10,7 @@
 		<nav class="navbar navbar-inverse navbar-dark bg-dark">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand ">Cadastrar Unidades</a>
+					<a class="navbar-brand" th:text="#{unidade.titulo.interno.cadastrar}"></a>
 				</div>
 			</div>
 		</nav>
