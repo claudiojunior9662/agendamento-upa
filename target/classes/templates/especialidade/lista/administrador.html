@@ -81,17 +81,18 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Cardiologia</td>
-							<td colspan="2"><a class="btn btn-info btn-sm" role="button">
-									<span class="oi oi-brush" title="Editar" aria-hidden="true">
-										<img
+						<tr th:each="e : ${especialidades}">
+							<td th:text="*{e.id}"></td>
+							<td th:text="*{e.nome}"></td>
+							<td colspan="2"><a class="btn btn-info btn-sm" role="button"
+								th:href="@{/especialidades/editar/{id} (id = ${e.id})}"> <span
+									class="oi oi-brush" title="Editar" aria-hidden="true"> <img
 										src="https://img.icons8.com/ios-glyphs/15/000000/pencil.png" />
 								</span>
 							</a>
 								<button type="button" class="btn btn-danger btn-sm"
-									data-toggle="modal" data-target="#myModal">
+									data-toggle="modal" data-target="#myModal"
+									th:id="${#strings.concat('btn_especialidades/excluir/', e.id)}">
 									<span class="oi oi-circle-x" title="Excluir" aria-hidden="true">
 										<img
 										src="https://img.icons8.com/ios-glyphs/15/000000/trash.png" />
@@ -101,7 +102,7 @@
 					</tbody>
 				</table>
 			</div>
-
+			<div th:replace="fragments/modal :: modal"></div>
 		</div>
 
 	</section>

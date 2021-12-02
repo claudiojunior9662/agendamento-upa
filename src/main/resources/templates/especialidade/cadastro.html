@@ -2,7 +2,8 @@
 <html layout:decorate="~{/layout/administrador}">
 <head>
 <meta charset="UTF-8">
-<title th:text="#{titulo.aba(#{principal.titulo}, #{especialidade.titulo.cadastrar})}"></title>
+<title
+	th:text="#{titulo.aba(#{principal.titulo}, #{especialidade.titulo.cadastrar})}"></title>
 </head>
 <body>
 	<section class="layout-content" layout:fragment="corpo">
@@ -10,26 +11,29 @@
 		<nav class="navbar navbar-inverse navbar-dark bg-dark">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" th:text="#{especialidade.titulo.interno.cadastrar}"></a>
+					<a class="navbar-brand"
+						th:text="#{especialidade.titulo.interno.cadastrar}"></a>
 				</div>
 			</div>
 		</nav>
 
 		<div class="main-content" id="cadastro">
 			<div th:replace="fragments/alert"></div>
-			<form action="" object="">
+			<form
+				th:action="${especialidade.id == null} ? @{/especialidades/salvar} : @{/especialidades/editar}"
+				th:object="${especialidade}" method="post">
 				<div class="row">
 					<div class="col">
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="basic-addon1">Nome da
 								Especialidade</span> <input type="text" class="form-control"
 								aria-label="Nome" aria-describedby="basic-addon1" id="nome"
-								field="">
+								th:field="*{nome}">
 						</div>
 					</div>
 				</div>
 
-				<br /> <input type="hidden" id="id" field="" />
+				<br /> <input type="hidden" id="id" th:field="*{id}" />
 				<button type="submit" class="btn btn-success">Cadastrar</button>
 
 			</form>
